@@ -18,12 +18,20 @@ class Directur extends StatelessWidget {
               Text(
                 'Koleksi Film Kurosawa',
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 26,
                   color: Colors.blue,
                   fontWeight: FontWeight.bold,
+                  shadows: [
+                    Shadow(
+                      offset: Offset(4, 4),
+                      blurRadius: 8,       
+                      color: Colors.black38, 
+                    ),
+                  ],
                 ),
               ),
               SizedBox(height: 30),
+              
               Film(judulFilm: 'Seven Samurai'),
               SizedBox(height: 5),
               Text(
@@ -31,9 +39,11 @@ class Directur extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
+                  backgroundColor: Colors.amberAccent,
                 ),
               ),
               SizedBox(height: 30),
+              
               Film(judulFilm: 'RAN'),
               SizedBox(height: 5),
               Text(
@@ -41,6 +51,16 @@ class Directur extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 16,
                   fontStyle: FontStyle.italic,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+              SizedBox(height: 5),
+              Text(
+                'Format VHS (Habis Terjual)',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.red,
+                  decoration: TextDecoration.lineThrough,
                 ),
               ),
             ],
@@ -54,6 +74,7 @@ class Directur extends StatelessWidget {
 class Film extends StatelessWidget {
   static const String namaSutradara = 'Akira Kurosawa';
   final String judulFilm;
+  
   const Film({super.key, required this.judulFilm});
 
   @override
